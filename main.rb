@@ -22,11 +22,11 @@ def pegaTitulo url
   html = URI.open(fullURL).read
   doc = Nokogiri::HTML(html, nil, 'UTF-8')
   titulo = doc.at_css('title').text
+  titulo = titulo.reverse[10..].reverse
   if titulo == ''
-    titulo = ' '
-  else
-    titulo = titulo.reverse[10..].reverse
+    titulo = '.'
   end
+
   return titulo
 end
 
