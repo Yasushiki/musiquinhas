@@ -5,9 +5,12 @@ require 'haml'
 require 'nokogiri'
 require 'open-uri'
 
+# sinatra config
 set :haml, format: :html5
 enable :sessions
 
+
+# getters
 def pegaLinha linhas
   l = linhas.sample
   linhas.delete(l)
@@ -28,26 +31,34 @@ def pegaTitulo url
 end
 
 
+# variables
 linhas = File.readlines('public/url', chomp: true)
-nomes = [{}, {}, {}, {}, {}]
 
+
+# routing
 get '/' do
   @url = pegaLinha(linhas)
   @titulo = pegaTitulo(@url)
-  @nomes = nomes
+  @nomes = session[:nomes] || Array.new(5, {})
   haml :index 
 end
 
 post '/a' do
   id = params["id"].to_i
-  nomes[id-1]["url"] = "https://youtu.be/"+params["url"]
-  nomes[id-1]["titulo"] = params["titulo"]
+  url = "https://youtu.be/"+params["url"]
+  titulo = params[:titulo]
+  
+  lH = session[:nomes] || Array.new(5, {})
+  lH[id-1] = {"url" => url, "titulo" => titulo}
+  
+  session[:nomes] = lH
+  
   redirect to('/')
 end
 
 get '/resetar' do
   linhas = File.readlines('public/url', chomp: true)
-  nomes = [{}, {}, {}, {}, {}]
+  session[:nomes] = [{}, {}, {}, {}, {}]
   redirect to('/')
 end
 

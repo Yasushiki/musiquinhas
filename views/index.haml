@@ -2,7 +2,7 @@
 %html
   %head
     %title Julgando você
-    %link(rel="stylesheet" href="styles/style.css")
+    %link(rel="stylesheet" href="styles/style.css?v=50")
 
   %body
     %form{:method => "post", :action => "/a"}
@@ -38,11 +38,14 @@
           %td
             %a{:href => @nomes[4]["url"]}= @nomes[4]["titulo"]
 
+#divIframe.center
+  %iframe{:width => "560", :height => "315", :src => "//www.youtube.com/embed/#{@url}"}
 
-%iframe{:width => "560", :height => "315", :src => "//www.youtube.com/embed/#{@url}"}
-
-%form{:action => "/resetar"}
-  %button#resetar{:type => "submit"}= "Resetar ranking"
+#divBotoes.center
+  %form{:action => "/"}
+    %button#novaMusica{:type => "submit"}= "Nova música"
+  %form{:action => "/resetar"}
+    %button#resetar{:type => "submit"}= "Resetar ranking"
 
 :javascript
   let a = document.querySelectorAll("a");
