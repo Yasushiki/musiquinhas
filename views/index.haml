@@ -1,0 +1,55 @@
+!!!
+%html
+  %head
+    %title Julgando você
+    %link(rel="stylesheet" href="styles/style.css")
+
+  %body
+    %form{:method => "post", :action => "/a"}
+      %input{:type => "hidden", :name => "url", :value => @url}
+      %input{:type => "hidden", :name => "titulo", :value => @titulo}
+      %table.center#top
+        %tr.center
+          %th='Classificação'
+          %th='Música'
+        %tr.center
+          %td
+            %input{:type => "submit", :name => "id", :value => "1"}
+          %td
+            %a{:href => @nomes[0]["url"]}= @nomes[0]["titulo"]
+        %tr.center
+          %td
+            %input{:type => "submit", :name => "id", :value => "2"}
+          %td
+            %a{:href => @nomes[1]["url"]}= @nomes[1]["titulo"]
+        %tr.center
+          %td
+            %input{:type => "submit", :name => "id", :value => "3"}
+          %td
+            %a{:href => @nomes[2]["url"]}= @nomes[2]["titulo"]
+        %tr.center
+          %td
+            %input{:type => "submit", :name => "id", :value => "4"}
+          %td
+            %a{:href => @nomes[3]["url"]}= @nomes[3]["titulo"]
+        %tr.center
+          %td
+            %input{:type => "submit", :name => "id", :value => "5"}
+          %td
+            %a{:href => @nomes[4]["url"]}= @nomes[4]["titulo"]
+
+
+%iframe{:width => "560", :height => "315", :src => "http://www.youtube.com/embed/#{@url}"}
+
+%form{:action => "/resetar"}
+  %button#resetar{:type => "submit"}= "Resetar ranking"
+
+:javascript
+  let a = document.querySelectorAll("a");
+  let btn = document.querySelectorAll('input[name="id"]');
+  for(let i=0; i<5; i++) {
+    if(a[i].innerText != '') {
+      btn[i].disabled = true;
+    }
+  }
+    
