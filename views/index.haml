@@ -12,31 +12,42 @@
         %tr.center
           %th='Classificação'
           %th='Música'
+          %th='Miniatura'
         %tr.center
           %td
             %input{:type => "submit", :name => "id", :value => "1"}
           %td
             %a{:href => @nomes[0]["url"]}= @nomes[0]["titulo"]
+          %td
+            %img{:src => "https://img.youtube.com/vi/#{@nomes[0]['token']}/mqdefault.jpg"}
         %tr.center
           %td
             %input{:type => "submit", :name => "id", :value => "2"}
           %td
             %a{:href => @nomes[1]["url"]}= @nomes[1]["titulo"]
+          %td
+            %img{:src => "https://img.youtube.com/vi/#{@nomes[1]['token']}/mqdefault.jpg"}
         %tr.center
           %td
             %input{:type => "submit", :name => "id", :value => "3"}
           %td
             %a{:href => @nomes[2]["url"]}= @nomes[2]["titulo"]
+          %td
+            %img{:src => "https://img.youtube.com/vi/#{@nomes[2]['token']}/mqdefault.jpg"}
         %tr.center
           %td
             %input{:type => "submit", :name => "id", :value => "4"}
           %td
             %a{:href => @nomes[3]["url"]}= @nomes[3]["titulo"]
+          %td
+            %img{:src => "https://img.youtube.com/vi/#{@nomes[3]['token']}/mqdefault.jpg"}
         %tr.center
           %td
             %input{:type => "submit", :name => "id", :value => "5"}
           %td
             %a{:href => @nomes[4]["url"]}= @nomes[4]["titulo"]
+          %td
+            %img{:src => "https://img.youtube.com/vi/#{@nomes[4]['token']}/mqdefault.jpg"}
 
 #divIframe.center
   %iframe{:width => "560", :height => "315", :src => "//www.youtube.com/embed/#{@url}"}
@@ -58,4 +69,11 @@
       btn[i].disabled = true;
     }
   }
-    
+  
+  let img = document.querySelectorAll('img');
+  for(let i=0; i<5; i++) {
+    if(img[i].src == "https://img.youtube.com/vi//mqdefault.jpg") {
+      img[i].style.display = "none";
+    }
+  }
+

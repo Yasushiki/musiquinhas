@@ -30,7 +30,6 @@ def pegaTitulo url
   return titulo
 end
 
-
 # variables
 linhas = File.readlines('public/url', chomp: true)
 
@@ -40,16 +39,22 @@ get '/' do
   @url = pegaLinha(linhas)
   @titulo = pegaTitulo(@url)
   @nomes = session[:nomes] || Array.new(5, {})
+<<<<<<< HEAD
   haml :index
+=======
+  
+  haml :index 
+>>>>>>> 27c0ab5b4ffa2e76b6c1807838541640067aaabc
 end
 
 post '/a' do
   id = params["id"].to_i
+  token = params["url"]
   url = "https://youtu.be/"+params["url"]
   titulo = params[:titulo]
   
   lH = session[:nomes] || Array.new(5, {})
-  lH[id-1] = {"url" => url, "titulo" => titulo}
+  lH[id-1] = {"token" => token, "url" => url, "titulo" => titulo}
   
   session[:nomes] = lH
   
