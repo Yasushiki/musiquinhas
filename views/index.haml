@@ -2,7 +2,7 @@
 %html
   %head
     %title Julgando você
-    %link(rel="stylesheet" href="styles/style.css?v=50")
+    %link(rel="stylesheet" href="styles/style.css?v=60")
 
   %body
     %form{:method => "post", :action => "/a"}
@@ -46,6 +46,9 @@
     %button#novaMusica{:type => "submit"}= "Nova música"
   %form{:action => "/resetar"}
     %button#resetar{:type => "submit"}= "Resetar ranking"
+  %form{:action => "/instrucoes"}
+    %button#instrucoes{:type => "submit"}= "Instruções"
+
 
 :javascript
   let a = document.querySelectorAll("a");

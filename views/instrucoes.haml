@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Instruções
+    %link(rel="stylesheet" href="styles/style.css?v=50")
+  
+  %body
+    %h1.center Como utilizar o Musiquinhas
+
+    %h2.center Funcionalidades
+    %h3.center Ranquear
+    %p.center Para ranquear uma música, você deve clicar no número correspondente à posição que você quer. Por exemplo: Apareceu sua música preferida, então você deve clicar no número 1.
+    %h3.center Resetar partida
+    %p.center Ao final da partida, quando você tiver ranqueado as 5 músicas, você pode tirar uma screenshot/print/captura de tela e compartilhar com seus amigos (estou trabalhando em um jeito mais fácil de compartilhar o resultado). Você também pode clicar no botão de "Resetar ranking" para resetar o ranking atual, assim podendo jogar de novo.
+    %h3.center Trocar a música
+    %p.center Também há o botão "Nova música", que serve para trocar a música atual, caso ela esteja com problema, seja muito grande ou caso simplesmente você não goste dela.
+    
+    %h2.center Jogo
+    %p.center Você receberá 5 músicas e deverá ranqueá-las da melhor para a pior, contudo, você não sabe qual é a próxima música e nem pode trocar a posição das músicas passadas. Pense com cuidado para não colocar uma música mediana lá no topo ou uma música boa muito abaixo. 
+ 
+
+    %h2.center Descobridor de músicas
+    %p.center Caso você não queira jogar, você pode usar este projeto apenas para descobrir novas músicas (e ainda pode "salvar" as músicas momentaneamente no ranking). A base de dados já conta com mais de 3000 músicas, que variam desde sertanejo universitário até weirdcore.
+
+    %h1.center Ou não. Faça o que você quiser. Todos os meus projetos são 100% open-source. Sinta-se à vontade para copiar, clonar, editar e redistribuir este projeto sem nenhum aviso prévio e/ou menção ao projeto original.
+
+#divBotoes.center
+  %form{:action => "/"}
+    %button#instrucoes{:type => "submit"}= "Voltar"

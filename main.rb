@@ -40,7 +40,7 @@ get '/' do
   @url = pegaLinha(linhas)
   @titulo = pegaTitulo(@url)
   @nomes = session[:nomes] || Array.new(5, {})
-  haml :index 
+  haml :index
 end
 
 post '/a' do
@@ -62,3 +62,6 @@ get '/resetar' do
   redirect to('/')
 end
 
+get '/instrucoes' do
+  haml :instrucoes
+end
