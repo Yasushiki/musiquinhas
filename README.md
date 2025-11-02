@@ -15,5 +15,5 @@ You can reset the ranking or skip to the next song
 
 ##
 
-there is a running server of this game in:
-https://musiquinhas.onrender.com/
+~there is a running server of this game in:~
+~https://musiquinhas.onrender.com/~
