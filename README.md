@@ -5,7 +5,7 @@ musiquinhas is a simple game inspired by a video that I saw on Instragram. You'l
 
 ## Usage
 ### building
-Just clone the repository and run ```bundle install```. After all the gems are installed, run ```ruby main.rb```
+Just clone the repository and run ```bundle install```. After all the gems are installed, run ```bundle exec rackup```
 
 ### database
 The "urls" (actually, it's just the url tokens) are in ```public/url``` file, you can create another file with your custom urls and change the path in ```main.rb```
