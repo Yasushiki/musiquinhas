@@ -1,31 +1,36 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    base64 (0.2.0)
     date (3.3.4)
     ffi (1.16.3)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
       tilt
+    logger (1.6.4)
+    mini_portile2 (2.8.9)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.0)
-    nokogiri (1.15.5-aarch64-linux)
+    nokogiri (1.19.2)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.15.5-arm-linux)
+    nokogiri (1.19.2-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.15.5-arm64-darwin)
+    nokogiri (1.19.2-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.15.5-x86-linux)
+    nokogiri (1.19.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.5-x86_64-darwin)
+    nokogiri (1.19.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.5-x86_64-linux)
+    nokogiri (1.19.2-x86_64-linux-gnu)
       racc (~> 1.4)
     open-uri (0.4.1)
       stringio
       time
       uri
+    ostruct (0.6.1)
     puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.3)
@@ -63,9 +68,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  base64
   haml
+  logger
   nokogiri
   open-uri
+  ostruct
   puma
   sass
   sinatra

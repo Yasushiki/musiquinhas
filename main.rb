@@ -6,6 +6,7 @@ require 'nokogiri'
 require 'open-uri'
 
 # sinatra config
+set :root, File.dirname(__FILE__)
 set :haml, format: :html5
 enable :sessions
 
@@ -65,3 +66,6 @@ end
 get '/instrucoes' do
   haml :instrucoes
 end
+
+
+Sinatra::Application.run!
